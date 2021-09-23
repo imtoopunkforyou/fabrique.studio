@@ -1,2 +1,2 @@
 ## fabrique.studio
-Test tast for www.fabrique.studio
+Test task for www.fabrique.studio
