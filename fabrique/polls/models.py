@@ -17,8 +17,8 @@ class User(models.Model):
 
 class Poll(models.Model):
     title = models.CharField(max_length=200)
-    poll_start = models.DateTimeField(auto_now_add=True, editable=False)
-    poll_end = models.DateTimeField()
+    poll_start = models.DateField(auto_now_add=True, editable=False)
+    poll_end = models.DateField()
     description = models.TextField()
 
     def __str__(self):
