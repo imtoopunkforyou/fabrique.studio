@@ -2,12 +2,11 @@ from django.db import models
 
 QUESTION_TYPES = (
     ('0', 'Text'),
-    ('1', 'Single'),
-    ('2', 'Multiple'),
+    ('1', 'Only one'),
+    ('2', 'More than one'),
 )
 
 
-# Create your models here.
 class User(models.Model):
     id = models.IntegerField(primary_key=True, default="0")
 
