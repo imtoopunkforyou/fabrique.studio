@@ -21,7 +21,9 @@ Test task for www.fabrique.studio
 Вы можете использовать виртуальное окружение на вашей машине, если вам так удобнее.
 
 * ``git clone https://github.com/imtoopunkforyou/fabrique.studio.git``
-* ``cd ~/strongly-connected``
-* ``pip3 install -U pip``
+* ``cd ~/fabrique.studio``
 * ``pip3 install -r requirements.txt``
-* ``python3 main.py``
+* ``cd ~/fabrique.studio/fabrique``
+* ``python3 manage.py migrate``
+* ``python3 manage.py createsuperuser``
+* ``python3 manage.py runserver``
