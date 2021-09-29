@@ -5,6 +5,7 @@ from rest_framework.views import APIView
 from .models import Poll, Question, Answer
 from .serializers import PollSerializer, QuestionSerializer, AnswerSerializer
 
+
 class PollsView(APIView):
     def get(self, request):
         polls = Poll.objects.all()
@@ -16,7 +17,8 @@ class PollsView(APIView):
         serializer = PollSerializer(data=polls)
         if serializer.is_valid(raise_exception=True):
             poll_saved = serializer.save()
-        return Response({"success":"Poll '{}' created successfully".format(poll_saved.title)}) 
+        return Response({"success": "Poll '{}' created successfully".format(poll_saved.title)})
+
 
 class QuestionsView(APIView):
     def get(self, request):
@@ -29,7 +31,8 @@ class QuestionsView(APIView):
         serializer = QuestionSerializer(data=questions)
         if serializer.is_valid(raise_exception=True):
             question_saved = serializer.save()
-        return Response({"success":"Question '{}' created successfully".format(question_saved.title)}) 
+        return Response({"success": "Question '{}' created successfully".format(question_saved.title)})
+
 
 class AnswersView(APIView):
     def get(self, request):
@@ -42,9 +45,4 @@ class AnswersView(APIView):
         serializer = AnswerSerializer(data=answers)
         if serializer.is_valid(raise_exception=True):
             answer_saved = serializer.save()
-        return Response({"success":"Answer '{}' created successfully".format(answer_saved.title)}) 
-
-
-
-
-
+        return Response({"success": "Answer '{}' created successfully".format(answer_saved.title)})

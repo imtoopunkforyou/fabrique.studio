@@ -25,7 +25,8 @@ class Poll(models.Model):
 
 
 class Question(models.Model):
-    poll = models.ForeignKey(Poll, on_delete=models.CASCADE, related_name='questions')
+    poll = models.ForeignKey(
+        Poll, on_delete=models.CASCADE, related_name='questions')
     type = models.CharField(max_length=1, choices=QUESTION_TYPE, default=0)
     question = models.CharField(max_length=200)
 
@@ -35,7 +36,8 @@ class Question(models.Model):
 
 class Answer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
+    question = models.ForeignKey(
+        Question, on_delete=models.CASCADE, related_name='answers')
     answer = models.CharField(max_length=200)
 
     def __str__(self):
