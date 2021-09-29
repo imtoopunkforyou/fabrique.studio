@@ -1,6 +1,6 @@
 from django.db import models
 
-QUESTION_TYPES = (
+QUESTION_TYPE = (
     ('0', 'Text'),
     ('1', 'Only one'),
     ('2', 'More than one'),
@@ -26,7 +26,7 @@ class Poll(models.Model):
 
 class Question(models.Model):
     poll = models.ForeignKey(Poll, on_delete=models.CASCADE, related_name='questions')
-    type = models.CharField(max_length=1, choices=QUESTION_TYPES, default=0)
+    type = models.CharField(max_length=1, choices=QUESTION_TYPE, default=0)
     question = models.CharField(max_length=200)
 
     def __str__(self):
@@ -39,4 +39,4 @@ class Answer(models.Model):
     answer = models.CharField(max_length=200)
 
     def __str__(self):
-        return 'Question:{} - answer: {}'.format(self.question, self.answer)
+        return 'Question:{} answer: {}'.format(self.question, self.answer)
